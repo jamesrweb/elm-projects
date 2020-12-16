@@ -1,0 +1,77 @@
+[data-elm-hot="true"] {
+  height: inherit;
+}
+
+:root {
+  --base-font-family: 'Source Sans Pro', 'Trebuchet MS', 'Lucida Grande', 'Bitstream Vera Sans', 'Helvetica Neue', sans-serif;
+  --base-font-size: 10px;
+  --body-font-size: 1.9rem;
+  --title-font-size: 3rem;
+  --container-width: 80rem;
+  --spacing: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--base-font-family);
+  font-size: var(--base-font-size);
+}
+
+body {
+  font-size: var(--body-font-size);
+  text-align: center;
+  color: #293c4b;
+}
+
+.title {
+  font-size: var(--title-font-size);
+  margin: 0 0 var(--spacing);
+}
+
+.container {
+  display: grid;
+  gap: calc(var(--spacing) * 2);
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: var(--spacing);
+}
+
+.game-container {
+  display: grid;
+  gap: var(--spacing);
+}
+
+.failures {
+  grid-area: gf;
+}
+
+.controls-container {
+  grid-area: gc;
+}
+
+@media screen and (min-width: 500px) {
+  .game-container {
+    grid-template-areas:
+    "gb gb gf"
+    "gb gb gc";
+  }
+}
+
+.guess-button-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--spacing);
+  grid-area: gb;
+}
+
+.button {
+  padding: calc(var(--spacing) / 2) var(--spacing);
+  text-transform: uppercase;
+  background: rebeccapurple;
+  color: white;
+  border: none;
+  border-radius: 0.3rem;
+}
